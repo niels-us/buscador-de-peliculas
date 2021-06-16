@@ -42,9 +42,10 @@ const llenarCards = (peliculas) => {
 
 formBusqueda.onsubmit = (e) => {
     e.preventDefault();
-    setTimeout(() => { console.log("Tiempo demora"); }, 2000);
 
     starLoading()
+    setTimeout(() => { console.log("Tiempo demora"); }, 2000);
+	
     getPelicula(inputBusqueda.value).then((rpta) => {
         if (rpta.errors) {
             resumenResultado.innerHTML = `<small class="text-warning lead">Resultados para: vacio - total 0</small>`
