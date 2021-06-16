@@ -9,3 +9,20 @@
 	background-position: calc(100% - 50px) center;
 	background-size: 40px 40px;
 }
+
+
+
+.loading {
+	background-color: rgba(0, 0, 0, 0.5);
+	position: fixed;
+	width: 100vw;
+	height: 100vh;
+	top: 0;
+	left: 0;
+	z-index: 1000;
+	display: none;
+	justify-content: center;
+	align-items: center;
+	font-size: 3rem;
+	color: white;
+}

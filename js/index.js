@@ -3,10 +3,19 @@ import {
 } from './servicios.js'
 
 const base_url_imagenes = 'https://image.tmdb.org/t/p/w500';
+
+let loading = document.getElementById('loading');
 let formBusqueda = document.getElementById('formBusqueda');
 let inputBusqueda = document.getElementById('inputBusqueda');
 let cardsContainer = document.getElementById('cards__container');
 let resumenResultado = document.getElementById('resumenResultado')
+
+let starLoading = () => {
+    loading.style.display = 'flex'
+}
+let stopLoading = () => {
+    loading.style.display = 'none'
+}
 
 const llenarCards = (peliculas) => {
 
@@ -33,6 +42,8 @@ const llenarCards = (peliculas) => {
 
 formBusqueda.onsubmit = (e) => {
     e.preventDefault();
+
+    starLoading()
     getPelicula(inputBusqueda.value).then((rpta) => {
         if (rpta.errors) {
             resumenResultado.innerHTML = `<small class="text-warning lead">Resultados para: vacio - total 0</small>`
@@ -42,6 +53,7 @@ formBusqueda.onsubmit = (e) => {
                 icon: 'error',
                 confirmButtonText: 'Cool'
             })
+            stopLoading()
         } else if (+rpta.total_results === 0) {
             resumenResultado.innerHTML = `<small class="text-warning lead">Resultados para: ${inputBusqueda.value} - total ${rpta.results.length}</small>`
             Swal.fire({
@@ -50,10 +62,12 @@ formBusqueda.onsubmit = (e) => {
                 icon: 'error',
                 confirmButtonText: 'Cool'
             })
+            stopLoading()
 
         } else {
             llenarCards(rpta.results);
             resumenResultado.innerHTML = `<small class="text-success lead">Resultados para: ${inputBusqueda.value} - total ${rpta.results.length}</small>`
+            stopLoading()
         }
     })
 
