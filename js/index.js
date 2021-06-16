@@ -42,6 +42,7 @@ const llenarCards = (peliculas) => {
 
 formBusqueda.onsubmit = (e) => {
     e.preventDefault();
+    setTimeout(() => { console.log("Tiempo demora"); }, 2000);
 
     starLoading()
     getPelicula(inputBusqueda.value).then((rpta) => {
