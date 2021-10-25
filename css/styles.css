@@ -25,6 +25,12 @@
 	color: white;
 }
 
+.card img{
+	width: 100%;
+	height: 100%;
+	color: brown;
+}
+
 @media (max-width: 768px) {
 	.input-busqueda {
 		min-height: 35px;

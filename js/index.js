@@ -22,7 +22,7 @@ const llenarCards = (peliculas) => {
     let cardsString = "";
     peliculas.forEach((pelicula) => {
 
-        cardsString += `<div class="col-md-3 mt-3 d-inline-flex">
+        cardsString += `<div class="col-md-3 mt-1 d-inline-flex">
 				<div class="card shadow bg-secondary">
 					<img src="${base_url_imagenes}${pelicula.poster_path}" alt="" class="card-img-top" />
 					<div class="card-body">
