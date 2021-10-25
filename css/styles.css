@@ -1,6 +1,6 @@
 .input-busqueda {
 	min-height: 60px;
-	border-radius: 30px;
+	border-radius: 10px;
 	padding-left: 3rem;
 	padding-right: 3rem;
 	font-size: 2rem;
@@ -9,8 +9,6 @@
 	background-position: calc(100% - 50px) center;
 	background-size: 40px 40px;
 }
-
-
 
 .loading {
 	background-color: rgba(0, 0, 0, 0.5);
@@ -25,4 +23,15 @@
 	align-items: center;
 	font-size: 3rem;
 	color: white;
+}
+
+@media (max-width: 768px) {
+	.input-busqueda {
+		min-height: 35px;
+		padding-left: 1rem;
+		padding-right: 1rem;
+		font-size: 1rem;
+		background-size: 25px 25px;
+		background-position: 95%;
+	}
 }
